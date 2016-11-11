@@ -40,7 +40,7 @@ public class testToString {
 	 * which will also return "." in toString()
 	 */
 	@Test
-	public void testdead1() {
+	public void testAliveToDead() {
 		Cell newcell = new Cell(true);
 		newcell.setAlive(false);
 		assertEquals(".", newcell.toString());
