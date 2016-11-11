@@ -266,11 +266,13 @@ I write this method to test the modified iterateCell method which take the curre
     	return toReturn;        
     }
     
-  4.2 Test RunContinous() method
-Apart from doing manual test on RunContinous to ensure that the output is the same after modifiying the backup method,  I write a method to test whether size, _maxCount will impact _r because the codes I deleted is mainly about the manipulation on size, _r and maxCount. If _r will not be influenced by the size and _maxCount, meaning deleteing them should not influence the results. I write a method called runContinuousFlag() in MainPanel Class which takes size and _maxCount as arguements and returns _r. 
-    
+
    
-   public int runContinuousFlag(int size, int _maxCount) { 	   
+  4.2 Test RunContinous() method
+  
+  Apart from doing manual test on RunContinous to ensure that the output is the same after modifiying the backup method,  I write a method to test whether size, _maxCount will impact _r because the codes I deleted is mainly about the manipulation on size, _r and maxCount. If _r will not be influenced by the size and _maxCount, meaning deleteing them should not influence the results. I write a method called runContinuousFlag() in MainPanel Class which takes size and _maxCount as arguements and returns _r. 
+      
+    public int runContinuousFlag(int size, int _maxCount) { 	   
 		System.out.println("Running...");
 		int origR = _r;
 		try {
@@ -285,6 +287,8 @@ Apart from doing manual test on RunContinous to ensure that the output is the sa
 
 		return _r;
 	}
+   
+  
     
   
 
