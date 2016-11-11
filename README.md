@@ -10,8 +10,9 @@
   
   2.1 CPU situation 
   
+   < img width="560" alt="1" src="https://cloud.githubusercontent.com/assets/16599342/20202780/f1efa9b4-a78f-11e6-8a2e-    5b15d401fb0d.png">
    
-   ![InitailCPU](https://cloud.githubusercontent.com/assets/16599342/20202780/f1efa9b4-a78f-11e6-8a2e-5b15d401fb0d.png)
+    
 
    2.2 Memory Situation
    
