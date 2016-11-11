@@ -49,12 +49,12 @@ public class testConvertToInt {
 		public void testNegative() throws InvocationTargetException, IllegalAccessException {
 			try {
 				int res = (int) convertToInt.invoke(panel, -1);
-		        fail("Number format exception");
+		                fail("Number format exception");
 			} catch (IllegalAccessException e) {
 				fail(e.getMessage());
 			} catch (InvocationTargetException e) {
 
-	        }
+	               }
 		}
 		
 		/**
