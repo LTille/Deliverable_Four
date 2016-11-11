@@ -47,8 +47,14 @@ public class testConvertToInt {
 		 */
 		@Test
 		public void testNegative() throws InvocationTargetException, IllegalAccessException {
-			int res = (int) convertToInt.invoke(panel, Integer.MIN_VALUE);
-	        
+			try {
+				int res = (int) convertToInt.invoke(panel, -1);
+		        fail("Number format exception");
+			} catch (IllegalAccessException e) {
+				fail(e.getMessage());
+			} catch (InvocationTargetException e) {
+
+	        }
 		}
 		
 		/**
@@ -66,7 +72,7 @@ public class testConvertToInt {
 		 */
 		@Test
 		public void testNormalNumber() throws InvocationTargetException, IllegalAccessException {
-			int res = (int) convertToInt.invoke(panel, 20);
+			int res = (int) convertToInt.invoke(panel, 8);
 			assertEquals(8, res);			
 		}
 }
