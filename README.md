@@ -31,25 +31,27 @@
   
   Original method: 
  
-			 private int convertToInt(int x) {
-				   int c = 0;
-				   String padding = "0";
-				   while (c < _r) {
-				       String l = new String("0");
-				       padding += l;
-				       c++;
-				   }
-				   String n = padding + String.valueOf(x);
-				   int q = Integer.parseInt(n);
-				   return q;
-			 }
+      private int convertToInt(int x) {
+		int c = 0;
+		String padding = "0";
+		while (c < _r) {
+			String l = new String("0");
+			padding += l;
+			c++;
+		}
+
+		String n = padding + String.valueOf(x);
+		int q = Integer.parseInt(n);
+		return q;
+	}
+			 
     
  Modified method:
 
-			private int convertToInt(int x) {
-			   	if (x < 0) throw new NumberFormatException();
-				   return x;
-			}
+	private int convertToInt(int x) {
+	    if (x < 0) throw new NumberFormatException();
+	       return x;
+	}
   
   The String concatenation used lots of time and space. Once those codes have been deleted, we can observe a great improvement   on both the time complexity and space complexity, as illustrated in the below screenshots 
   
@@ -61,36 +63,34 @@
   3.2 MainPanel.runContinuous()
   
   Original method:
-
-				 public void runContinuous() {
-					_running = true;
-					while (_running) {
-					    System.out.println("Running...");
-					    int origR = _r;
-					    try {
-						Thread.sleep(20);
-					    } catch (InterruptedException iex) {
-					    }
-					    for (int j = 0; j < _maxCount; j++) {
-						_r += (j % _size) % _maxCount;
-						_r += _maxCount;
-					    }
-					    _r = origR;
-					    backup();
-					    calculateNextIteration();
-					}
-				    }
+        public void runContinuous() {
+		_running = true;
+		while (_running) {
+			System.out.println("Running...");
+			int origR = _r;
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException iex) { }
+			for (int j=0; j < _maxCount; j++) {
+				_r += (j % _size) % _maxCount;
+				_r += _maxCount;
+			}
+			_r = origR;
+			backup();
+			calculateNextIteration();
+		}
+	}
+	
     
  Modified Method:
 
-				 public void runContinuous() {
-					_running = true;
-					while (_running) {
-					    System.out.println("Running...");
-					    backup();
-					    calculateNextIteration();
-					}
-				    }
+	public void runContinuous() {
+		_running = true;
+		while (_running) {
+			backup();
+			calculateNextIteration();
+		}
+	}
 
  The try catch method and for loop in the inital method is useless, modifying them increase performance, which can be seen from the below screenshots. RunContinous() now is not the most CPU-intensive methods. However, the Cell<init> method in the
  backup() methods, which is called continously by runContinous() method now takes up most CPU. I was trying to modify the backup() method initially by initiating the _backupCells at the same time with _cell. In this way, we only need to assign the current cell status into backupCell as I think this repetitive initiation in the for loop (_backupCells[j][k] = new Cell();) is unecessary as we can overrite the initial status in the backupCell easily. I thought this should work, however, the clear function sometimes cannot clear the whole status in the board sometimes, for which I don't know the reason
