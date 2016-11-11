@@ -9,10 +9,8 @@
    From the screenshots in 2.1 and 2.2, we can see that convertToInt() and runContinous() are CPU intensive. Moreover, we can see from the memory situation that char[] takes up lots of memory. Screenshot in 2.3 suggeset that toString() take up most of the CPU when write into backup file
   
   2.1 CPU situation 
-  
-   < img width="560" alt="1" src="https://cloud.githubusercontent.com/assets/16599342/20202780/f1efa9b4-a78f-11e6-8a2e-    5b15d401fb0d.png">
    
-    
+    ![InitailCPU](https://cloud.githubusercontent.com/assets/16599342/20202780/f1efa9b4-a78f-11e6-8a2e-5b15d401fb0d.png)
 
    2.2 Memory Situation
    
