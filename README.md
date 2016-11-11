@@ -250,9 +250,9 @@
 ## 4. Some words on testing
 4.1 Test IterateCell() method
 
-I write this method to test the modified iterateCell method which take the current status of cell and its neighbor numbers   as input directly and return the new status
+I write this method to test the modified iterateCell method which take the current status of cell and its neighbor numbers   as input directly and return the new status 
   
-   public boolean iterateCellFlag(boolean alive, int numNeighbors) {
+     public boolean iterateCellFlag(boolean alive, int numNeighbors) {
     	boolean toReturn = false; 
     	if(alive) {
             if(numNeighbors >= 2  && numNeighbors <= 3){
@@ -265,7 +265,7 @@ I write this method to test the modified iterateCell method which take the curre
     	}      
     	return toReturn;        
     }
-    
+   
 
    
   4.2 Test RunContinous() method
