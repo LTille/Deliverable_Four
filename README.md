@@ -14,15 +14,20 @@ IS2545 - DELIVERABLE 4: Performance Testing
    2.2 Memory Situation
    ![InitialM](https://cloud.githubusercontent.com/assets/16599342/20202783/f1f074de-a78f-11e6-818f-d0d73f99f508.png)
 
-  The methods I found that are CPU-intensive are as follows,
+   From the above screenshots, we can see that convertToInt() and runContinous take up most of the CPU. Moreover
    
-3. Methods needs to be modified
+   2.3 Using Write Function
+   ![tostring](https://cloud.githubusercontent.com/assets/16599342/20202786/f1fc4ce6-a78f-11e6-8c74-50ba26199e67.png)
+  
+    We can see that toString() take up most of the CPU when write into backup file
+   
+3. Methods modified
    
   3.1 MainPanel.convertToInt() 
  ![ConvertC](https://cloud.githubusercontent.com/assets/16599342/20202784/f1f52e2a-a78f-11e6-9ca9-efbe0769ef03.png)
  ![ConvertM](https://cloud.githubusercontent.com/assets/16599342/20202785/f1f8f74e-a78f-11e6-8971-9b9db154c387.png)
  
- From the image, we can see the MainPanel.convertToInt() is using CPU heavily, covering 50% of total time, thus should be refacored.
+ 
 
   3.2 MainPanel.runContinuous()
  ![runc](https://cloud.githubusercontent.com/assets/16599342/20202787/f1fd8e12-a78f-11e6-9e67-3e751e71d601.png)
@@ -35,7 +40,6 @@ IS2545 - DELIVERABLE 4: Performance Testing
  ![iteratem](https://cloud.githubusercontent.com/assets/16599342/20202781/f1efdace-a78f-11e6-8f62-80f5aea1f96d.png)
 
   3.4 Cell.toString() MainPanel.toString()
-  ![tostring](https://cloud.githubusercontent.com/assets/16599342/20202786/f1fc4ce6-a78f-11e6-8c74-50ba26199e67.png)
   
 
 
