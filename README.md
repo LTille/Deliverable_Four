@@ -5,7 +5,7 @@
 ## 1. Summary
    In this deliverable, we conducted performance testing on Conway's Game of Life. VisualVM is used as profiler to determine methods that consume most resources, then we applied pinning test to refactor the methods and ensure that the speed of application without modifying behavior 
 
-## 2. Intial Run and Profiler in VisualVM
+## 2. Initial Run and Profiler in VisualVM
    From the screenshots in 2.1 and 2.2, we can see that convertToInt() and runContinous() are CPU intensive. Moreover, we can see from the memory situation that char[] takes up lots of memory. Screenshot in 2.3 suggeset that toString() take up most of the CPU when write into backup file
   
   2.1 CPU situation 
@@ -18,7 +18,6 @@
    ![InitialM](https://cloud.githubusercontent.com/assets/16599342/20202783/f1f074de-a78f-11e6-818f-d0d73f99f508.png)
 
   
-   
    2.3 Using Write Function
    
    ![tostring](https://cloud.githubusercontent.com/assets/16599342/20202786/f1fc4ce6-a78f-11e6-8c74-50ba26199e67.png)
@@ -97,9 +96,6 @@
  
   
  ![runc](https://cloud.githubusercontent.com/assets/16599342/20202787/f1fd8e12-a78f-11e6-9e67-3e751e71d601.png)
- 
- 
- ![runm](https://cloud.githubusercontent.com/assets/16599342/20202788/f1fe1684-a78f-11e6-9c04-053b82f11be8.png)
 
 
   3.3 MainPanel.iterateCell()
@@ -157,15 +153,12 @@
 		return toReturn;
 	}
   
- ![iteratec](https://cloud.githubusercontent.com/assets/16599342/20202782/f1f00fc6-a78f-11e6-8fb5-014c4e78d6b9.png)
- 
- 
- ![iteratem](https://cloud.githubusercontent.com/assets/16599342/20202781/f1efdace-a78f-11e6-8f62-80f5aea1f96d.png)
- 
+ ![iteratec](https://cloud.githubusercontent.com/assets/16599342/20202782/f1f00fc6-a78f-11e6-8fb5-014c4e78d6b9.png) 
+
 
   3.4 Cell.toString() MainPanel.toString()
   
-  I modified the toString() method in both Cell class and MainPanel, although the main performance issue is attributed to toString() in Cell class, which has large amount of string concantenation. However, if the size of board is extremely large, the toString() method in MainPanel will also influence the performance. I use StringBuilder instead of String in concatenating board status consider the factor that the time complexity of using StringBuilder is O(N) while String is O(N^2). 
+  I modified the toString() method in both Cell class and MainPanel, although the main performance issue is attributed to toString() in Cell class, which has large amount of string concantenation. However, if the size of board is extremely large, the toString() method in MainPanel will also influence the performance. I use StringBuilder instead of String in concatenating board status consider the factor that the time complexity of using StringBuilder is O(N) while String is O(N^2). The toString() method disappear from the profiler in CPU as the modified method runs quickly
 
 
   3.4.1 Cell.toString 
