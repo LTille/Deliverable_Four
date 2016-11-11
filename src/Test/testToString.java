@@ -35,6 +35,17 @@ public class testToString {
 		assertEquals(".", cell.toString());
 	}
 	
+	/** 
+	 * A previously alive cell, once set to dead, the text for this cell will become " "
+	 * which will also return "." in toString()
+	 */
+	@Test
+	public void testdead1() {
+		Cell newcell = new Cell(true);
+		newcell.setAlive(false);
+		assertEquals(".", newcell.toString());
+	}
+	
 	/**
 	 * The cell in the initial board should be all dead, meaning all "."
 	 */
