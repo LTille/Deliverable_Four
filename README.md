@@ -25,7 +25,7 @@
   
    
    
-3. Methods modified
+## 3. Methods modified
    
   3.1 MainPanel.convertToInt() 
   
@@ -102,7 +102,7 @@
  ![runm](https://cloud.githubusercontent.com/assets/16599342/20202788/f1fe1684-a78f-11e6-9c04-053b82f11be8.png)
 
 
-  3.3 MainPanel.iteracteCell()
+  3.3 MainPanel.iterateCell()
   
   This method actually didn't cause so much pain, still I think it can be more clear, and there is a slightly improvement in performance
   
